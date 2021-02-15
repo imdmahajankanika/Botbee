@@ -52,7 +52,6 @@ const getMovieData = (movie , releaseYear = null ) => {
                     year:releaseYear
                     }
                 });
-                console.log(movied)
                 for(var i=0;i<movied.data.results.length;i++){
                     if(movied.data.results[i].release_date.includes(releaseYear)&&movied.data.results[i].overview&&movied.data.results[i].poster_path){
                         movieRes=movied.data.results[i]
@@ -94,9 +93,11 @@ const getMovieData = (movie , releaseYear = null ) => {
             let intent = extractEntity(nlpData, 'intent')
             if(intent){
                 let movie = extractEntity(nlpData, 'movie')
+                console.log(movie)
                 let releaseYear = extractEntity(nlpData, 'releaseYear')
                 try{
                     let movieData = await getMovieData(movie, releaseYear)
+                    console.log(movieData)
                     var response,img_path;
                     if(nlpData.intents[0].name === 'director'){
                         let movie_res = await getDirector(movieData.id)
