@@ -1,6 +1,6 @@
 const axios = require ("axios") ;
 const config = require('../config')
-const apikey=config.TMBD;
+const apikey= "7fa0c35103d70d16a05ec9db5b02bffa";
 const extractEntity = (nlp , entity ) =>{
     // should be filled by you .
 
