@@ -10,6 +10,7 @@ const extractEntity = (nlp , entity ) =>{
         }
         else{
             try{
+                console.log(nlp.entities)
                 return nlp.entities[entity+':'+entity][0].body
             }
             catch(error){//If entity does not exist
