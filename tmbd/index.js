@@ -44,7 +44,6 @@ const getMovieData = (movie , releaseYear = null ) => {
                 }
             }
             else{
-                console.log("i am here")
                  movied = await axios.get( 'https://api.themoviedb.org/3/search/movie/',{
         
                     params : {
@@ -66,6 +65,7 @@ const getMovieData = (movie , releaseYear = null ) => {
                 
         }
         catch(error){
+            console.log(error)
             reject(error);
         }
     }) ;
