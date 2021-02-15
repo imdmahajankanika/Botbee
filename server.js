@@ -69,7 +69,6 @@ server.post ('/', (req , res , next ) =>{
                         process.exit(0)
                     case 'Current Weather':
                         weather(cb.entities.city).then(async result=> {
-                            console.log("sjhsg")
                             var  weaDesc = result.weather[0].description
                             var city = result.name
                             var countries = require("i18n-iso-countries");
