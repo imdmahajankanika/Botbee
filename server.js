@@ -24,6 +24,8 @@ server.post ('/', (req , res , next ) =>{
     // the message will be passed to FBeamer for parsing
     return f.incoming(req, res,async data=>{
         const {message,sender} = data;
+        console.log (message.nlp.entities )
+
         data=f.messageHandler(data);
         //console.log(data)
         try {
