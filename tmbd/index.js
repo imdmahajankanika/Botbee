@@ -10,7 +10,6 @@ const extractEntity = (nlp , entity ) =>{
         }
         else{
             try{
-                console.log(nlp.entities)
                 return nlp.entities[entity+':'+entity][0].body
             }
             catch(error){//If entity does not exist
@@ -53,6 +52,7 @@ const getMovieData = (movie , releaseYear = null ) => {
                     year:releaseYear
                     }
                 });
+                console.log(movied)
                 for(var i=0;i<movied.data.results.length;i++){
                     if(movied.data.results[i].release_date.includes(releaseYear)&&movied.data.results[i].overview&&movied.data.results[i].poster_path){
                         movieRes=movied.data.results[i]
