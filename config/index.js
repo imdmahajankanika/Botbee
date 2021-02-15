@@ -5,7 +5,8 @@ module.exports = {
         pageAccessToken : process.env.pageAccessToken ,
         VerifyToken : process.env.VerifyToken,
         appSecret : process.env.appSecret
-        }
+        },
+    TMBD: process.env.TMBD
     }
 } else {
 module.exports = require ('./development.json') ;
