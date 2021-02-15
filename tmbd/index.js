@@ -44,6 +44,7 @@ const getMovieData = (movie , releaseYear = null ) => {
                 }
             }
             else{
+                console.log("i am here")
                  movied = await axios.get( 'https://api.themoviedb.org/3/search/movie/',{
         
                     params : {
@@ -93,11 +94,9 @@ const getMovieData = (movie , releaseYear = null ) => {
             let intent = extractEntity(nlpData, 'intent')
             if(intent){
                 let movie = extractEntity(nlpData, 'movie')
-                console.log(movie)
                 let releaseYear = extractEntity(nlpData, 'releaseYear')
                 try{
                     let movieData = await getMovieData(movie, releaseYear)
-                    console.log(movieData)
                     var response,img_path;
                     if(nlpData.intents[0].name === 'director'){
                         let movie_res = await getDirector(movieData.id)
