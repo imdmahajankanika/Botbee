@@ -1,6 +1,6 @@
 const axios = require ("axios") ;
 const config = require('../config')
-const apikey= "7fa0c35103d70d16a05ec9db5b02bffa";
+const apikey= config.TMBD;
 const extractEntity = (nlp , entity ) =>{
     // should be filled by you .
 
@@ -65,7 +65,6 @@ const getMovieData = (movie , releaseYear = null ) => {
                 
         }
         catch(error){
-            console.log(error)
             reject(error);
         }
     }) ;
