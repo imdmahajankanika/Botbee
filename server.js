@@ -81,10 +81,6 @@ server.post ('/', (req , res , next ) =>{
                             await f.txt(data.sender , output) ;
                             }
                         )
-                        .catch(async error => {
-                            console.log(error.response.data.message.red)
-                            await f.txt(data.sender , error.response.data.message) ;
-                          });
                         
                         break;
                     case 'Weather Forecast':
