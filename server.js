@@ -1,4 +1,4 @@
-'use strict';
+
 const conf = require('./config')
 const tmbd = require('./tmbd')
 const express = require ('express') ;
