@@ -1,4 +1,4 @@
-
+'use strict';
 const conf = require('./config')
 const tmbd = require('./tmbd')
 const express = require ('express') ;
@@ -43,7 +43,7 @@ server.post ('/', (req , res , next ) =>{
                 })
                 .catch(async error => {
                     //console.log(error)
-                await f.txt(data.sender , "No data found, search again!") ;
+                await f.txt(data.sender , "No data found, search again please!") ;
                 });
             }
             else if(message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="director")){
