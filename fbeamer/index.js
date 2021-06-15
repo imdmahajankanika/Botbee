@@ -11,7 +11,7 @@ class FBeamer {
             this.pageAccessToken=pageAccessToken;
             this.VerifyToken = VerifyToken;
             this.appSecret = appSecret;
-            console.log("pageAccessToken: ",pageAccessToken);
+            
         }
         else{
             throw new Error("Token is undefined")
@@ -107,6 +107,7 @@ class FBeamer {
                     type : 'text',
                     content : message.text
                 }
+        console.log("obj: ",obj);
         return obj;
         }
         else if(message.attachments){
