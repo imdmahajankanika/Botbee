@@ -135,7 +135,7 @@ class FBeamer {
                     }) ;
                 }
                 else {
-                        console.log("errorrr: ",body,response);
+                        
                         reject (error) ;
                 }
             }) ;
