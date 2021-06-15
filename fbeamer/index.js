@@ -11,6 +11,7 @@ class FBeamer {
             this.pageAccessToken=pageAccessToken;
             this.VerifyToken = VerifyToken;
             this.appSecret = appSecret;
+            console.log("pageAccessToken: ",pageAccessToken);
         }
         else{
             throw new Error("Token is undefined")
