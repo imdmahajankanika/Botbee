@@ -107,7 +107,7 @@ class FBeamer {
                     type : 'text',
                     content : message.text
                 }
-        console.log("obj: ",obj);
+        
         return obj;
         }
         else if(message.attachments){
@@ -135,6 +135,7 @@ class FBeamer {
                     }) ;
                 }
                 else {
+                        console.log("errorrr: ",body.message_id,this.pageAccessToken);
                         reject (error) ;
                 }
             }) ;
