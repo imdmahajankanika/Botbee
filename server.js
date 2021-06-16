@@ -32,7 +32,7 @@ server.post ('/', (req , res , next ) =>{
                 await f.txt(data.sender , 'hey there I finally recieved your message in my chatbot :)') ;
             }
             else if(data.type==='image') {
-                await f.img(data.sender , 'https://scontent.xx.fbcdn.net/v/t39.1997-6/s168x128/141389264_898324984040408_6756971258327637623_n.png?_nc_cat=105&ccb=2&_nc_sid=0572db&_nc_ohc=qZaZIyiAP8gAX-ltJHK&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_tp=30&oh=3fb421890e35317db764c1cb60b125cf&oe=603EBB69') ;
+                await f.img(data.sender , 'https://www.mindtools.com/blog/wp-content/uploads/2016/08/GI_184953226_Lisa_Blue.jpg') ;
             }
             else if(message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="releaseYear")){
                 tmbd(message.nlp).then(async result=> {
