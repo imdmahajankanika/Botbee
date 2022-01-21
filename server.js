@@ -34,7 +34,7 @@ server.post ('/', (req , res , next ) =>{
             else if(data.type==='image') {
                 await f.img(data.sender , 'https://www.mindtools.com/blog/wp-content/uploads/2016/08/GI_184953226_Lisa_Blue.jpg') ;
             }
-            else if(message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="releaseYear")){
+            else if(message.nlp.intents&&message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="releaseYear")){
                 tmbd(message.nlp).then(async result=> {
                     var resp=`Movie Release Date: ${result[0]}\nMovie Original title: ${result[1]}\nMovie ID: ${result[2]}\nOverview: ${result[3]}`
                     await f.txt(data.sender , resp) ;
@@ -46,7 +46,7 @@ server.post ('/', (req , res , next ) =>{
                 await f.txt(data.sender , "No data found, search again please!") ;
                 });
             }
-            else if(message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="director")){
+            else if(message.nlp.intents&&message.nlp.intents.length&&(message.nlp.intents[0].name=="movieinfo"||message.nlp.intents[0].name=="director")){
                 tmbd(message.nlp).then(async result=> {
                     await f.txt(data.sender , result) ;
                     
